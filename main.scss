@@ -1,0 +1,30 @@
+@import '_vendor/normalize';
+@import '_vendor/reset';
+@import '_vendor/royalslider';
+@import '_includes/utils';
+
+$white: #ffffff;
+$offblack: #292929;
+$link-hover: #aaaaaa;
+$overlay-text-col: #181818;
+$copy: $offblack;
+$bg-colour: $white;
+$overlay-colour: #fed2ad;
+$entry-padding-modifier:-45px;
+
+$text-offset: 0;
+$bez: cubic-bezier(1,0,0,1);
+
+$max-width: 1400px;
+$reduced-padding:35px;
+$padding:95px;
+$vert-padding:50px;
+$reduced-vert-padding:30px;
+
+@import '_includes/typography';
+@import '_includes/base';
+@import '_includes/structure';
+
+@import '_includes/errors';
+@import '_includes/media';
+@import '_vendor/_font-awesome';

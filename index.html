@@ -1,0 +1,478 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>Currency Design for 2146</title>
+
+	 <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+	 <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/index2_style.css">
+	
+</head>
+
+<body>
+
+
+<script>
+
+
+function movemain(){
+		 var ca=document.getElementById("intro1");
+          ca.style.marginTop="-100vh";
+	}
+function hidenav(){
+		  var nv=document.getElementById("header1");
+          nv.style.visibility="0";
+		  nv.style.opacity="0";
+			
+		}
+function shownav(){
+		  var nv=document.getElementById("header1");
+          nv.style.visibility="1";
+	      nv.style.opacity="1";
+		  
+		}
+ function movescoll(){
+   window.scrollTo(0,-1000);  //修改700为指定高度
+}
+
+		  //监听页面滚动事件
+    function scrollEvent() {
+      window.onscroll = function(e){
+        scrollFunc();
+        if(scrollDirection == 'down'){
+            //页面向下滚动要做的事情
+			hidenav();
+        }
+        else if(scrollDirection == 'up'){
+            //页面向上滚动要做的事情
+			shownav();
+        }
+    }
+}
+		  scrollEvent();
+	
+var scrollAction = {x: 'undefined', y: 'undefined'}, scrollDirection;
+function scrollFunc() {
+    if (typeof scrollAction.x == 'undefined') {
+        scrollAction.x = window.pageXOffset;
+        scrollAction.y = window.pageYOffset;
+    }
+    var diffX = scrollAction.x - window.pageXOffset;
+    var diffY = scrollAction.y - window.pageYOffset;
+    if (diffX < 0) {
+        // Scroll right
+        scrollDirection = 'right';
+    } else if (diffX > 0) {
+        // Scroll left
+        scrollDirection = 'left';
+    } else if (diffY < 0) {
+        // Scroll down
+        scrollDirection = 'down';
+    } else if (diffY > 0) {
+        // Scroll up
+        scrollDirection = 'up';
+    } else {
+        // First scroll event
+    }
+    scrollAction.x = window.pageXOffset;
+    scrollAction.y = window.pageYOffset;
+}
+		
+
+</script>
+	
+	<!--popupwidow for C-mist card-->
+	<div class="modal1" id="popup">
+		<div class="inner">
+			<div class="container">
+				<div class="content">
+				 <a class="close" href="#closepop"> </a>
+			 <div class="human-mod" id="popcon">
+					<div class="left">
+
+ <!--carousel--> 
+	 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+	  <div class="carousel-inner">
+		<div class="carousel-item active">
+		  <img src="images/c-mist1.png" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/c-mist-back.png" class="d-block w-100" alt="...">
+		</div>
+		  <div class="carousel-item">
+		  <img src="images/c-mist3.png" class="d-block w-100" alt="...">
+		</div>
+		  <div class="carousel-item">
+		  <img src="images/c-mist-3d发光.png" class="d-block w-100" alt="...">
+		</div>
+	  </div>
+       
+	  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	  </a>
+	</div>
+  <!--carousel-->
+					</div>
+					<div class="right">
+						<h4>C-Mist Card</h4>
+						<p><b>Size: 85.5mm x 53.2mm</b></p>
+<p><b>Thickness: 0.7mm</b></p>
+
+<p>In the front of the C-Mist card, use some layers to show the sky instead of use smooth gradient. In the back of the card, there are three icons, represented for ship, maglev train and double-decker bus which is originate from the UK. These three icons are touchable and interactive, after touch, the screen on the card will show the corresponding route map, if the user want to know more details, they can use the voice assistance that can be arose by touching the button in the top right corner. Also, the screen will show the account detail every time after people consume.</p>
+						
+<h4>Security design</h4>
+<p><b>Fingerprint verification </b></p>
+<p>Before use the card, people need fingerprint verification. The position of it is ergonomic, people can easily complete fingerprint verification while swap the card.</p>
+
+<p><b>Anti-lost</b></p>
+<p>When the card detected itself falling down in weightlessness and hitting the ground it will brighten and twinkle. This can help people find their card more easily and the card is easier to be seen by people behind the owner. The light will turn off when the card is collected by people. The contact information will be shown in the card in that case.
+</p>
+					</div>
+					</div>
+					
+<!--popup for bank card-->
+					
+					<div class="human-mod" id="popcon1">
+					<div class="left">
+
+ <!--carousel--> 
+	 <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+		  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+	  <div class="carousel-inner" >
+		<div class="carousel-item active">
+		  <img src="images/bankcard正面11.24.png" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/bankcard背面11.24.png" class="d-block w-100" alt="...">
+		</div>
+         <div class="carousel-item">
+      <img src="images/bankcard3d发光11.24.png" class="d-block w-100" alt="...">
+    </div>
+	  </div>
+       
+	  <a class="carousel-control-prev" href="#carouselExampleControls1" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls1" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	  </a>
+	</div>
+  <!--carousel-->
+					</div>
+					<div class="right">
+						<h4>Bank Card</h4>
+						<p><b>Size: 85.5mm x 48.1mm</b></p>
+						<p><b>Thickness: 0.7mm</b></p>
+						<p>The design style of bank card is similar with the c-mist card. The colorful sky and rich land represent the most precious thing, it is also the yearning for a better life of people now and in the past. In the back, the card number will be encrypted with Morse code. And the color of it is the result of randomly assigned color and background color superimposed. This greatly increases the difficulty of forgery. The screen under it wills show information about consume record and account balance. Also, a greeting sentence to encourage people.
+						</p>
+<h4>Security design</h4>
+<p><b>Fingerprint verification </b></p>
+<p>Before use the card, people need fingerprint verification. The position of it is ergonomic, people can easily complete fingerprint verification while swap the card.</p>
+
+<p><b>Anti-lost</b></p>
+<p>When the card detected itself falling down in weightlessness and hitting the ground it will brighten and twinkle. This can help people find their card more easily and the card is easier to be seen by people behind the owner. The light will turn off when the card is collected by people. The contact information will be shown in the card in that case.
+</p>
+					</div>
+					</div>
+			 <div class="human-mod" id="popcon2">
+					<div class="left">
+
+ <!--carousel--> 
+<div id="carouselExampleControls2" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+	<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+  </ol>
+		 <div class="carousel-inner" >
+		<div class="carousel-item active">
+		  <img src="images/2.5d纸币_画板 1.png" class="d-block w-100" alt="...">
+		</div>
+		<div class="carousel-item">
+		  <img src="images/2.5d纸币-02.png" class="d-block w-100" alt="...">
+		</div>
+		  <div class="carousel-item">
+		  <img src="images/2.5d纸币-03.png" class="d-block w-100" alt="...">
+		</div>
+		  <div class="carousel-item">
+		  <img src="images/2.5d纸币-100背面.png" class="d-block w-100" alt="...">
+		</div>
+	  </div>
+       
+	  <a class="carousel-control-prev" href="#carouselExampleControls2" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	  </a>
+	  <a class="carousel-control-next" href="#carouselExampleControls2" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	  </a>
+	</div>
+  <!--carousel-->
+					</div>
+					<div class="right">
+						<h4>Bank Notes</h4>
+						<p><b>Size: same size, 155mm x 87mm</b></p>
+						<p>The bank notes use 2.5 dimensions style, full of technical sense. In the front of bank notes show two landmarks of Scotland: Carlton Hill and Forth Bridge, in a kind of abstract and three-dimensional way. In the back of 500 debits bank note, it shows a scene of the space, the whole earth is blue and some lights emitted from the surface of the earth, as for its main function, it is for people’s imagination. A planet showing the time can be the moon, in that time, moon has been transformed by human and has more function. In the back of 100 debits bank note, it shows the scene under the sea, cars, roads and any kinds of architecture are built under glass channels.
+						</p>
+					<h4>Anti-counterfeiting design：</h4>	
+					<img  src="images/幻灯片1.png" alt="instuction1">
+					<img  src="images/幻灯片2.png" alt="instuction2">
+					</div>
+					</div>
+		
+			   </div>
+			</div>
+		</div>
+	</div> 
+	<!--popupwidow-->
+	
+	<loadbar id="loadbar"></loadbar>
+	<header class="largeheader" id="header1">	
+	<div class="c-main-nav" id="nav1">
+		<a class="c-main-nav__link logo js-focusRemover" href="#wholetop">
+			Kelly
+		</a>
+
+		
+        	
+	<div class="dropdown">
+	  <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Menu
+	  </a>
+
+	  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		<a class="dropdown-item" href="#intro1">About</a>
+		<a class="dropdown-item" href="#worksection">Cards</a>
+		<a class="dropdown-item" href="#workrow2">Notes</a>
+		<a class="dropdown-item" href="#coins">Coins</a>
+		<a class="dropdown-item" href="#poster">Poster</a>
+	  </div>
+	</div>
+
+		<ul class="c-main-nav__list js-focusRemover" >
+
+			<li class="c-main-nav__item">
+				<a class="c-main-nav__link" href="#intro1">About</a>
+			</li>
+			<li class="c-main-nav__item">
+				<a class="c-main-nav__link" href="#worksection">Cards</a>
+			</li>
+			<li class="c-main-nav__item">
+				<a class="c-main-nav__link" href="#workrow2">Notes</a>
+			</li>
+			<li class="c-main-nav__item">
+				<a class="c-main-nav__link" href="#coins">Coins</a>
+			</li>
+			<li class="c-main-nav__item">
+				<a class="c-main-nav__link" href="#poster">Poster</a>
+			</li>
+		</ul>
+	</div>	
+	</header>
+
+	 
+
+  
+<!--wholescreen pic-->
+ 
+
+<section class="wholepic" id="homepic">
+	
+	</section>
+	 <section class="wholetrans" id="wholetop">
+		
+		 </section>
+
+	
+		
+
+		   <!-- Intro -->
+        <section class="intro" id="intro1">
+			<p>About</p>
+        	<p>The year is 2146. The increasing effects of climate change have led to rising global temperatures. The older nations have fragmented and recombined, creating new joint oceanic nations. </p>
+				<p class="secondp">The joint oceanic nations have developed new currencies that celebrate their heritage and indicate their aspirations for the future. </p>
+			<p class="closebutton"><a onClick="bclose()">Close</a></p>
+			
+			</section>
+			
+ <main id="main1"> 
+	<section class="worksection" id="worksection">
+      <div class="container" >
+		    <div  class="row" id="workrow">
+          <div  class="col-md-6 col-12 text-center">
+            <a  href="#popup0" class="avatar"><img src="images/c-mist1.png" /></a>
+            <h4>C-Mist Card</h4>
+            <h6>front</h6>
+          </div>
+          <div class="col-md-6 col-12 text-center mt-md-0 mt-2">
+            <a  href="#popup0" class="avatar"><img src="images/c-mist-back.png" /></a>
+            <h4>C-Mist Card</h4>
+            <h6>back</h6>
+          </div>
+        </div>
+		  
+	</div>	
+		
+	
+      <div class="container">
+		   <div class="row" id="workrow1">
+          <div  class="col-md-6 col-12 text-center">
+            <a  href="#popup1" class="avatar"><img src="images/bankcard正面11.24.png" /></a>
+            <h4>Bank Card</h4>
+            <h6>front</h6>
+          </div>
+          <div class="col-md-6 col-12 text-center mt-md-0 mt-2">
+            <a  href="#popup1" class="avatar"><img src="images/bankcard背面11.24.png" /></a>
+            <h4>Bank Card</h4>
+            <h6>back</h6>
+          </div>
+        </div>
+		  
+	</div>	
+		
+		<section class="banknotes" id="workrow2">
+		<div class="container">
+		   <div class="row" >
+          <div  class="col-md-6 col-12 text-center">
+            <a  href="#popup2" class="avatar"><img src="images/2.5d纸币_画板 1.png" /></a>
+            <h4>Banknote 500 Creds</h4>
+            <h6>front</h6>
+          </div>
+          <div class="col-md-6 col-12 text-center mt-md-0 mt-2">
+            <a  href="#popup2" class="avatar"><img src="images/2.5d纸币-02.png"/></a>
+            <h4>Banknote 500 Creds</h4>
+            <h6>back</h6>
+          </div>
+        </div>
+		  
+	</div>	
+		
+		<div class="container">
+		   <div class="row" id="workrow3">
+          <div  class="col-md-6 col-12 text-center">
+            <a  href="#popup2" class="avatar"><img src="images/2.5d纸币-03.png"/></a>
+            <h4>Banknote 100 Creds</h4>
+            <h6>front</h6>
+          </div>
+          <div class="col-md-6 col-12 text-center mt-md-0 mt-2">
+            <a  href="#popup2" class="avatar"><img src="images/2.5d纸币-100背面.png" /></a>
+            <h4>Banknote 100 Creds</h4>
+            <h6>back</h6>
+          </div>
+        </div>
+		  
+	</div>	
+</section>
+<div class="container" id="coins">
+  <div class="row">
+    <div class="col text-center"><a  href="#aboutcoin" class="avatar1"><img src="images/coin-04.png" /></a>
+	  <h4>Coin 10 Creds</h4>
+            <h6>front</h6></div>
+    <div class="col text-center"><a href="#aboutcoin" class="avatar1"><img src="images/coin-05.png" /></a>
+	  <h4>Coin 10 Creds</h4>
+            <h6>back</h6></div>
+    <div class="col text-center"><a href="#aboutcoin" class="avatar1"><img src="images/coin-06.png" /></a>
+	  <h4>Coin 5 Creds</h4>
+            <h6>front</h6></div>
+    <div class="col text-center"><a href="#aboutcoin" class="avatar1"><img src="images/coin-07.png" /></a>
+	   <h4>Coin 5 Creds</h4>
+            <h6>back</h6></div>   
+	</div>
+	<section class="aboutcoin" id="aboutcoin"> 
+	<h4>About coins: </h4>
+		<p class="coinp" id="coinp"> 
+			<b>Size:10 creds coin’s diameter is 25mm, 5 creds coin’s diameter is 20mm.</b>
+			<br>The coins are designed to use materials like stone, shell or meteorite. It is shaped like a piece of chess.The special gloss of the coin is reflected on the white surface. The front shows Carlton Hill and the castle, respectively. The back of the coin, for the value of 10 are sun and king crown, for the value of 5 are moon, stars and queen crown. The crowns stand for the royal of the United Kingdom. The sun and the moon only appear in the sky. These two elements help people to distinguish the coin value from 10 and 5. On the surface of number 5 and 10, there are thin and raised line for blind to touch. There are some complex processed glass on the crown increased difficulty of counterfeiting.
+			</p>
+		<a onClick="cclose()"><p class="closecoin">Close</p></a>
+		</section> 
+		</div>
+	</section>
+<section class="poster" id="poster">
+	<div class="container" align="center">
+		<a href="#aboutpost"><img src="images/poster.gif" class="img-fluid" alt="poster" /></a>
+		 <h4>Poster</h4>
+		
+	<section class="aboutpost" id="aboutpost"> 
+	<h4>About poster: </h4>
+		<p class="postp" id="postp"> 
+			The poster is designed to bring hope to people's lives.People are seeking for new possibility, they would move from sea to the space. The idea is similar in the design of 500 creds bank note, the Carlton Hill become a rocket, are sent to the space (showed in the back of bank note). The sky color change from blue-green to purple illustrate it are getting close to space. In the beginning, the rocket start shaking and the fish start to move faster to safer area. Then the rocket leaves from the see into the sky. 
+
+			</p>
+		<a onClick="pclose()"><p class="closecoin">Close</p></a>
+		</section> 
+		</div>
+		 </section>
+	 
+	
+		 <section class="bottonclick">
+<a href="#wholetop"><h4>Back to Top </h4></a></section>
+
+	  
+
+	
+		  
+  </main>
+	<!-- Optional JavaScript -->
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    
+
+
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+<script src="js/js-index.js"></script>
+<script>
+	function bclose(){
+		  var nv=document.getElementById("intro1");
+		  nv.style.opacity="0";
+		  nv.style.marginTop="-200%";
+		 var mv=document.getElementById("main1");
+		  mv.style.opacity="1";
+	}
+	function cclose(){
+		  var nv=document.getElementById("aboutcoin");
+		  nv.style.display="none";
+	
+	}
+	function pclose(){
+		  var nv=document.getElementById("aboutpost");
+		  nv.style.display="none";
+	
+	}
+	    </script>
+	
+
+</body>
+	
+</html>
